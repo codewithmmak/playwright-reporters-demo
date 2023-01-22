@@ -1,0 +1,29 @@
+{
+  "name": "playwright-reporters-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf allure-results/ && rimraf allure-report/ && rimraf playwright-report/ && rimraf monocart-results/",
+    "test": "playwright test",
+    "list-reporter": "npm run clean && playwright test --config=playwright.list.config.js",
+    "line-reporter": "npm run clean && playwright test --config=playwright.line.config.js",
+    "dot-reporter": "npm run clean && playwright test --config=playwright.dot.config.js",
+    "html-reporter": "npm run clean && playwright test --config=playwright.html.config.js",
+    "json-reporter": "npm run clean && playwright test --config=playwright.json.config.js",
+    "junit-reporter": "npm run clean && playwright test --config=playwright.junit.config.js",
+    "allure-reporter": "npm run clean && playwright test --config=playwright.allure.config.js",
+    "generate-allure-report": "npx allure generate ./allure-results && allure open",
+    "monocart-reporter": "npm run clean && playwright test --config=playwright.monocart.config.js"
+  },
+  "keywords": [],
+  "author": "Code with MMAK",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.29.2",
+    "allure-commandline": "^2.20.1",
+    "allure-playwright": "^2.0.0-beta.24",
+    "monocart-reporter": "^1.1.4",
+    "rimraf": "^4.1.1"
+  }
+}
