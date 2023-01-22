@@ -1,7 +1,7 @@
 {
   "name": "playwright-reporters-demo",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is a test automation framework designed using Playwright to demonstrate different reporter",
   "main": "index.js",
   "scripts": {
     "clean": "rimraf allure-results/ && rimraf allure-report/ && rimraf playwright-report/ && rimraf monocart-results/",
