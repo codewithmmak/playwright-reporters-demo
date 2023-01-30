@@ -13,15 +13,15 @@ const { devices } = require('@playwright/test');
  * @type {import('@playwright/test').PlaywrightTestConfig}
  */
 const config = {
-  testDir: './tests',
+  testDir: './tests-lambdatest',
   /* Maximum time one test can run for. */
-  timeout: 30 * 1000,
+  timeout: 120 * 1000,
   expect: {
     /**
      * Maximum time expect() should wait for the condition to be met.
      * For example in `await expect(locator).toHaveText();`
      */
-    timeout: 5000
+    timeout: 15000
   },
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -49,64 +49,34 @@ const config = {
 
   /* Configure projects for major browsers */
   projects: [
+
+    // LambdaTest Cloud
     {
-      name: 'chromium',
+      name: 'chrome:latest:MacOS Catalina@lambdatest',
       use: {
-        ...devices['Desktop Chrome'],
-      },
+        viewport: { width: 1920, height: 1080 }
+      }
     },
-
-    // {
-    //   name: 'firefox',
-    //   use: {
-    //     ...devices['Desktop Firefox'],
-    //   },
-    // },
-
-    // {
-    //   name: 'webkit',
-    //   use: {
-    //     ...devices['Desktop Safari'],
-    //   },
-    // },
-
-    /* Test against mobile viewports. */
-    // {
-    //   name: 'Mobile Chrome',
-    //   use: {
-    //     ...devices['Pixel 5'],
-    //   },
-    // },
-    // {
-    //   name: 'Mobile Safari',
-    //   use: {
-    //     ...devices['iPhone 12'],
-    //   },
-    // },
-
-    /* Test against branded browsers. */
-    // {
-    //   name: 'Microsoft Edge',
-    //   use: {
-    //     channel: 'msedge',
-    //   },
-    // },
-    // {
-    //   name: 'Google Chrome',
-    //   use: {
-    //     channel: 'chrome',
-    //   },
-    // },
+    {
+      name: 'chrome:latest:Windows 10@lambdatest',
+      use: {
+        viewport: { width: 1280, height: 720 }
+      }
+    },
+    {
+      name: 'pw-firefox:latest:Windows 10@lambdatest',
+      use: {
+        viewport: { width: 1280, height: 720 }
+      }
+    },
+    {
+      name: 'pw-webkit:latest:Windows 10@lambdatest',
+      use: {
+        viewport: { width: 1920, height: 1080 }
+      }
+    }
   ],
 
-  /* Folder for test artifacts such as screenshots, videos, traces, etc. */
-  // outputDir: 'test-results/',
-
-  /* Run your local dev server before starting the tests */
-  // webServer: {
-  //   command: 'npm run start',
-  //   port: 3000,
-  // },
 };
 
 module.exports = config;

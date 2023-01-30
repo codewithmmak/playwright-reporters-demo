@@ -14,16 +14,27 @@
     "junit-reporter": "npm run clean && playwright test --config=playwright.junit.config.js",
     "allure-reporter": "npm run clean && playwright test --config=playwright.allure.config.js",
     "generate-allure-report": "npx allure generate ./allure-results && allure open",
+    "lambdatest": "npm run clean && npx playwright test --config=./lambdatest.config.js --reporter=line,allure-playwright",
     "monocart-reporter": "npm run clean && playwright test --config=playwright.monocart.config.js"
   },
-  "keywords": [],
+  "keywords": [
+    "node",
+    "javascript",
+    "allure-report",
+    "rimraf",
+    "lambdatest",
+    "allure-reporting",
+    "playwright-tests",
+    "lambdatest-playwright"
+  ],
   "author": "Code with MMAK",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.29.2",
+    "@playwright/test": "^1.30.0",
     "allure-commandline": "^2.20.1",
     "allure-playwright": "^2.0.0-beta.24",
     "monocart-reporter": "^1.1.4",
+    "playwright": "^1.30.0",
     "rimraf": "^4.1.1"
   }
 }

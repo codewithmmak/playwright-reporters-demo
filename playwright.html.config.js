@@ -33,7 +33,7 @@ const config = {
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [['html', {
-    outputFolder: 'playwright-report',
+    outputFolder: 'my-report',
     open: 'never',
     host: '0.0.0.0',
     port: 9223,
