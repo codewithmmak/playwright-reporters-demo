@@ -49,4 +49,4 @@
 ### LambdaTest Cloud Results
 ![LambdaTest Cloud Results](./assets/lambdatest-results.png?raw=true "LambdaTest Cloud Results")
 
-![LambdaTest Cloud Results Expanded View](./assets/lambdatest-results-expanded-view.PNG?raw=true "LambdaTest Cloud Results Expanded View")
+![LambdaTest Cloud Results Expanded View](./assets/lambdatest-results-expanded-view.png?raw=true "LambdaTest Cloud Results Expanded View")
